@@ -25,7 +25,7 @@ jobs:
 
     - name: Lint
       run: |
-        go mod tidy
+        #go mod tidy
         make fmt
         make vet
         #go get -u golang.org/x/lint/golint
@@ -37,5 +37,6 @@ jobs:
       if: success()
 
     - name: Build
-      run: go build -mod vendor ./...
+      #run: go build -mod vendor ./...
+      run: make build
       if: success()
