@@ -69,7 +69,7 @@ DriftStatus: IN_SYNC
 
 Report issues/questions/feature requests on in the [issues](https://github.com/mbevc1/aws-utils/issues/new) section.
 
-Full contributing [guidelines are covered here](CONTRIBUTING.md).
+Full contributing [guidelines are covered here](.github/CONTRIBUTING.md).
 
 ## Authors
 
