@@ -29,7 +29,7 @@ var (
 	ousLsCmd = &cobra.Command{
 		Use:     "list",
 		Aliases: []string{"ls"},
-		Short:   "Landing Zone OUs list",
+		Short:   "Organizations OUs list",
 		Run: func(cmd *cobra.Command, args []string) {
 			checkDebug()
 			lz.ListOUs(ctx, newCfg())
@@ -39,7 +39,7 @@ var (
 	ousDescCmd = &cobra.Command{
 		Use:     "describe",
 		Aliases: []string{"desc", "de"},
-		Short:   "Describe Landing Zone OU",
+		Short:   "Describe Organizations OU",
 		Args:    cobra.MatchAll(cobra.ExactArgs(1), cobra.ArbitraryArgs),
 		Run: func(cmd *cobra.Command, args []string) {
 			var Id string = args[0]

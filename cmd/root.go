@@ -26,7 +26,7 @@ var rootCmd = &cobra.Command{
 	Version:       Version,
 	SilenceUsage:  true,
 	SilenceErrors: true,
-	Short:         fmt.Sprintf("%s is a simple CLI to manage AWS Landing Zone", Name),
+	Short:         fmt.Sprintf("%s is a simple CLI to manage AWS environment", Name),
 	Long: `     ___        ______        _   _ _   _ _     
     / \ \      / / ___|      | | | | |_(_) |___ 
    / _ \ \ /\ / /\___ \ _____| | | | __| | / __|

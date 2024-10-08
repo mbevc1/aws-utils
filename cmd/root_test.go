@@ -10,7 +10,7 @@ func TestRootCmd(t *testing.T) {
 	if rootCmd.Use != Name {
 		t.Errorf("Expected Use to be %s, got %s", Name, rootCmd.Use)
 	}
-	if rootCmd.Short != fmt.Sprintf("%s is a simple CLI to manage AWS Landing Zone", Name) {
-		t.Errorf("Expected Short to be %s, got %s", fmt.Sprintf("%s is a simple CLI to manage AWS Landing Zone", Name), rootCmd.Short)
+	if rootCmd.Short != fmt.Sprintf("%s is a simple CLI to manage AWS environment", Name) {
+		t.Errorf("Expected Short to be %s, got %s", fmt.Sprintf("%s is a simple CLI to manage AWS environment", Name), rootCmd.Short)
 	}
 }

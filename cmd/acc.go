@@ -37,7 +37,7 @@ var (
 	accLsCmd = &cobra.Command{
 		Use:     "list",
 		Aliases: []string{"ls"},
-		Short:   "Landing Zone accounts list",
+		Short:   "Organizations accounts list",
 		Run: func(cmd *cobra.Command, args []string) {
 			checkDebug()
 			lz.ListAccounts(ctx, newCfg())
