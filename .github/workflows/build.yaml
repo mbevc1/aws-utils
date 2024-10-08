@@ -6,6 +6,10 @@ on:
       - '**'
   workflow_dispatch: {}
 
+env:
+  GOTELEMETRY: off
+  CGO_ENABLED: 0
+  
 name: Build
 jobs:
   test:
