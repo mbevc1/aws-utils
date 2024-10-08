@@ -6,8 +6,8 @@ AWS Utils CLI - making complex tasks simpler and quicker
 This is a simple CLI tool to help with some common AWS tasks. It's aiming to
 simplify and make some taks quicker by abstracting underlying steps or complexity.
 
-e.g. deleting AWS account is a single step and includes terminating Control Tower
-and closing an account.
+e.g. deleting an AWS account is a single step and includes both: terminating AWS
+Control Tower Catalog product and closing the account itself.
 
 ## Installing
 
@@ -63,6 +63,22 @@ Manifest:
 }
 Status: ACTIVE
 DriftStatus: IN_SYNC
+```
+
+## Building
+
+If you want to build your own binarly locally, you can do that by running:
+
+```shell
+make build
+```
+
+Which should produce a locally binary to run. You'll need Golang compiler.
+
+To run tests there is a Makefile target for that as well:
+
+```shell
+make test
 ```
 
 ## Contributing
