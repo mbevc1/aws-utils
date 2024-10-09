@@ -10,9 +10,13 @@ Issues are very valuable to this project.
 
 Thank you for creating them.
 
+Please use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and subjects for easier classification.
+
 ## Pull Requests
 
 Pull requests are, a great way to get your ideas into this repository.
+
+Please use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and subjects for easier classification.
 
 When deciding if I merge in a pull request I look at the following things:
 
