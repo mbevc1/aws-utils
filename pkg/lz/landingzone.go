@@ -249,6 +249,7 @@ func formatPath(path []string) string {
 }
 
 func ResetLandingZone(ctx context.Context, cfg aws.Config) {
+	var lzArn string
 	// CT client
 	ct := controltower.NewFromConfig(cfg)
 
@@ -258,7 +259,14 @@ func ResetLandingZone(ctx context.Context, cfg aws.Config) {
 		log.Fatalf("failed to list landing zones, %v", e)
 	}
 
-	lzArn := ""
+	// Check for confirmation
+	color.HiYellow("**WARNING**")
+	c := util.AskForConfirmation(fmt.Sprintf("Are you sure you want to reset your LZ?"))
+
+	if !c {
+		return
+	}
+
 	if len(res.LandingZones) > 0 {
 		lzArn = aws.ToString(res.LandingZones[0].Arn)
 		fmt.Printf("Found Landing Zone with ARN: %s\n", lzArn)
