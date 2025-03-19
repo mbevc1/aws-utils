@@ -15,7 +15,7 @@ VER?=dev
 GOTELEMETRY:=	off
 GO:=            go
 #GO_BUILD:=      go build -mod vendor -ldflags "-s -w -X main.GitCommit=${GHASH} -X main.Version=${VERSION}"
-GO_BUILD:=      go build -mod mod -ldflags "-s -w -X main.GitCommit=${GHASH} -X main.Version=${VERSION}"
+GO_BUILD:=      go build -mod mod -ldflags "-s -w -X main.commit=${GHASH} -X main.version=${VERSION}"
 #VERSION="${VERSION}" goreleaser --snapshot --rm-dist
 GO_VENDOR:=     go mod vendor
 BIN:=           aws-utils
@@ -53,7 +53,7 @@ snapshot: clean ## Build local snapshot
 	goreleaser build --clean --snapshot --single-target
 
 dev: clean ## Dev test target
-	go build -ldflags "-s -w -X main.Version=${VER}" -o $(BIN)
+	go build -ldflags "-s -w -X main.version=${VER}" -o $(BIN)
 	upx $(BIN)
 
 test: ## Run tests
