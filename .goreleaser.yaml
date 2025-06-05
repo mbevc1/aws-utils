@@ -37,6 +37,7 @@ builds:
 
 upx:
   - enabled: true
+    #goos: [linux, windows] # might break macOS
 
 #archives:
 #  - id: aws-utils
