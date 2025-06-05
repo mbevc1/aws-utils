@@ -45,8 +45,8 @@ func ListProvisionedProducts(ctx context.Context, cfg aws.Config) {
 	fmt.Println("Provisioned Products:")
 	for _, product := range result.ProvisionedProducts {
 		//fmt.Printf("ID: %s, Name: %s, Status: %s\n", aws.ToString(product.Id), aws.ToString(product.Name), product.Status)
-		// UNDER_CHANGE, PLAN_IN_PROGRESS Transitive states. Operations performed might not have valid results.
-		if product.Status != types.ProvisionedProductStatusUnderChange && product.Status != types.ProvisionedProductStatusPlanInProgress {
+		// UNDER_CHANGE, PLAN_IN_PROGRESS, ERROR are Transitive states. Operations performed might not have valid results.
+		if product.Status != types.ProvisionedProductStatusUnderChange && product.Status != types.ProvisionedProductStatusPlanInProgress && product.Status != types.ProvisionedProductStatusError {
 			tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, listProvisionedProductOutputs(ctx, svc, aws.ToString(product.Id))})
 		} else {
 			tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, ""})
@@ -148,7 +148,7 @@ func VendAccountProduct(ctx context.Context, cfg aws.Config, params util.Account
 	fmt.Printf("Found active provisioning artifact ID: %s\n", provisioningArtifactID)
 
 	// Define the parameters for the provisioning request
-	provisionedProductName := params.Name // matching account name
+	provisionedProductName := strings.ReplaceAll(params.Name, " ", "-") // match account name - need to replace spaces
 	parameters := []types.ProvisioningParameter{
 		{
 			Key:   aws.String("AccountEmail"),
