@@ -21,14 +21,15 @@ func ListProvisionedProducts(ctx context.Context, cfg aws.Config) {
 	// Create an Amazon Service Catalog client
 	svc := servicecatalog.NewFromConfig(cfg)
 
-	input := &servicecatalog.ScanProvisionedProductsInput{
+	input := &servicecatalog.SearchProvisionedProductsInput{
 		AccessLevelFilter: &types.AccessLevelFilter{
 			Key:   types.AccessLevelFilterKeyAccount,
 			Value: aws.String("self"),
 		},
+		PageSize: 20,
 	}
 
-	result, err := svc.ScanProvisionedProducts(ctx, input)
+	result, err := svc.SearchProvisionedProducts(ctx, input)
 	if err != nil {
 		log.Fatalf("failed to list provisioned products, %v", err)
 	}
@@ -38,21 +39,37 @@ func ListProvisionedProducts(ctx context.Context, cfg aws.Config) {
 		return
 	}
 
+	// Create the paginator
+	paginator := servicecatalog.NewSearchProvisionedProductsPaginator(svc, &servicecatalog.SearchProvisionedProductsInput{
+		AcceptLanguage: aws.String("en"), // optional
+		PageSize:       20,               // optional
+		SortBy:         aws.String("name"),
+		SortOrder:      types.SortOrderAscending,
+	})
+
 	// Construct TableWriter
 	tw := ptable.NewWriter()
 	tw.AppendHeader(ptable.Row{"ID", "Name", "Type", "Status", "Params"})
 
 	fmt.Println("Provisioned Products:")
-	for _, product := range result.ProvisionedProducts {
-		//fmt.Printf("ID: %s, Name: %s, Status: %s\n", aws.ToString(product.Id), aws.ToString(product.Name), product.Status)
-		// UNDER_CHANGE, PLAN_IN_PROGRESS, ERROR are Transitive states. Operations performed might not have valid results.
-		if product.Status != types.ProvisionedProductStatusUnderChange && product.Status != types.ProvisionedProductStatusPlanInProgress && product.Status != types.ProvisionedProductStatusError {
-			tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, listProvisionedProductOutputs(ctx, svc, aws.ToString(product.Id))})
-		} else {
-			tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, ""})
+	// Iterate over all pages
+	for paginator.HasMorePages() {
+		page, err := paginator.NextPage(ctx)
+		if err != nil {
+			log.Fatalf("failed to get page, %v", err)
 		}
-		// Get and print the product outputs
-		//listProvisionedProductOutputs(svc, aws.ToString(product.Id))
+
+		for _, product := range page.ProvisionedProducts { //result.ProvisionedProducts {
+			//fmt.Printf("ID: %s, Name: %s, Status: %s\n", aws.ToString(product.Id), aws.ToString(product.Name), product.Status)
+			// UNDER_CHANGE, PLAN_IN_PROGRESS, ERROR are Transitive states. Operations performed might not have valid results.
+			if product.Status != types.ProvisionedProductStatusUnderChange && product.Status != types.ProvisionedProductStatusPlanInProgress && product.Status != types.ProvisionedProductStatusError {
+				tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, listProvisionedProductOutputs(ctx, svc, aws.ToString(product.Id))})
+			} else {
+				tw.AppendRow(ptable.Row{aws.ToString(product.Id), aws.ToString(product.Name), aws.ToString(product.Type), product.Status, ""})
+			}
+			// Get and print the product outputs
+			//listProvisionedProductOutputs(svc, aws.ToString(product.Id))
+		}
 	}
 
 	fmt.Println(tw.Render())
