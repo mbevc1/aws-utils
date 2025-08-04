@@ -18,8 +18,8 @@ github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.4 h1:CXV68E2
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.4/go.mod h1:/xFi9KtvBXP97ppCz1TAEvU1Uf66qvid89rbem3wCzQ=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.17 h1:t0E6FzREdtCsiLIoLCWsYliNsRBgyGD/MCK571qk4MI=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.17/go.mod h1:ygpklyoaypuyDvOM5ujWGrYWpAK3h7ugnmKCU/76Ys4=
-github.com/aws/aws-sdk-go-v2/service/organizations v1.39.0 h1:8dPwqXepW7uF1+20KEXZMkVKxHsCUUt6Fc0Zypx9tPg=
-github.com/aws/aws-sdk-go-v2/service/organizations v1.39.0/go.mod h1:5MRPiBYQXFmgqmnXbhAVtKk9SebdLGFRmaa8gz1K4cM=
+github.com/aws/aws-sdk-go-v2/service/organizations v1.40.1 h1:9u1hD7vW7BjOxiCmE5TUDvyGk8sZiI6nTHhbUW9npPY=
+github.com/aws/aws-sdk-go-v2/service/organizations v1.40.1/go.mod h1:pEuSCVYuJKZHwfkIkbO4Xa40lgUlVxWCiLJgckMppXo=
 github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.34.2 h1:24S4nRk43CjgWiOlzHDv42q+PyFBZh35q4hgT7d5+6E=
 github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.34.2/go.mod h1:O1PtvWmaeH2OMbGOpP0M717VrEtEm3L8s4t5Ehi844I=
 github.com/aws/aws-sdk-go-v2/service/sso v1.25.5 h1:AIRJ3lfb2w/1/8wOOSqYb9fUKGwQbtysJ2H1MofRUPg=
