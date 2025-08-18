@@ -12,8 +12,8 @@ github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.3 h1:joyyUFhiTQQmVK6ImzN
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.3/go.mod h1:+vNIyZQP3b3B1tSLI0lxvrU9cfM7gpdRXMFfm67ZcPc=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3 h1:bIqFDwgGXXN1Kpp99pDOdKMTTb5d2KyU5X/BZxjOkRo=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3/go.mod h1:H5O/EsxDWyU+LP/V8i5sm8cxoZgc2fdNR9bxlOFrQTo=
-github.com/aws/aws-sdk-go-v2/service/controltower v1.23.1 h1:Y3vnotVgNjDLTajaTTH+XbDcmmB9jfQ+Qz/YN1dbONo=
-github.com/aws/aws-sdk-go-v2/service/controltower v1.23.1/go.mod h1:nKfpvxTfSBs+V/OSWVlzYV5K7RL9J/P5ZvGNk+0/Mug=
+github.com/aws/aws-sdk-go-v2/service/controltower v1.25.0 h1:oWlHOpu0G3VxhnBirGF/0Tn+euvARocShoTs2Wo2wgY=
+github.com/aws/aws-sdk-go-v2/service/controltower v1.25.0/go.mod h1:lGLCOsEUl7bFyjKgcp4ka3GHia6C1hTasvWGGFlaQ6Y=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.0 h1:6+lZi2JeGKtCraAj1rpoZfKqnQ9SptseRZioejfUOLM=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.0/go.mod h1:eb3gfbVIxIoGgJsi9pGne19dhCBpK6opTYpQqAmdy44=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.2 h1:oxmDEO14NBZJbK/M8y3brhMFEIGN4j8a6Aq8eY0sqlo=
