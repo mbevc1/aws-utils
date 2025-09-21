@@ -92,9 +92,9 @@ func listAccounts(ctx context.Context, svc *organizations.Client, parentID strin
 
 		for i, account := range page.Accounts {
 			if i == len(page.Accounts)-1 {
-				fmt.Fprintf(w, "%s└── %s (%s)\t |\t %s\t |\t %s\n", prefix, *account.Name, *account.Id, *account.Email, account.Status)
+				fmt.Fprintf(w, "%s└── %s (%s)\t |\t %s\t |\t %s\n", prefix, *account.Name, *account.Id, *account.Email, account.State)
 			} else {
-				fmt.Fprintf(w, "%s├── %s (%s)\t |\t %s\t |\t %s\n", prefix, *account.Name, *account.Id, *account.Email, account.Status)
+				fmt.Fprintf(w, "%s├── %s (%s)\t |\t %s\t |\t %s\n", prefix, *account.Name, *account.Id, *account.Email, account.State)
 			}
 		}
 	}

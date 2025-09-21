@@ -87,7 +87,7 @@ func FindAccounts(ctx context.Context, cfg aws.Config, Id string, filter string)
 
 		// Construct TableWriter
 		tw := ptable.NewWriter()
-		tw.AppendHeader(ptable.Row{"ID", "Email", "Name", "OU", "Status"})
+		tw.AppendHeader(ptable.Row{"ID", "Email", "Name", "OU", "State"})
 
 		// Process each account in the page
 		for _, account := range output.Accounts {
@@ -169,7 +169,7 @@ func getAccountDetails(account types.Account, ou string) ptable.Row {
 	  aws.ToString(account.Name),
 	  account.Status)*/
 
-	return ptable.Row{aws.ToString(account.Id), aws.ToString(account.Email), aws.ToString(account.Name), ou, account.Status}
+	return ptable.Row{aws.ToString(account.Id), aws.ToString(account.Email), aws.ToString(account.Name), ou, account.State}
 }
 
 func getRootId(ctx context.Context, client *organizations.Client) (string, error) {
