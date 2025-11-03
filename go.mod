@@ -3,7 +3,7 @@ module aws-utils
 go 1.24
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.39.4
+	github.com/aws/aws-sdk-go-v2 v1.39.5
 	github.com/aws/aws-sdk-go-v2/config v1.31.15
 	github.com/aws/aws-sdk-go-v2/service/controltower v1.26.8
 	github.com/aws/aws-sdk-go-v2/service/organizations v1.45.5
