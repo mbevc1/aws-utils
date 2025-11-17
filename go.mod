@@ -10,7 +10,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.39.1
 	github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.36.5
 	github.com/fatih/color v1.18.0
-	github.com/jedib0t/go-pretty/v6 v6.7.1
+	github.com/jedib0t/go-pretty/v6 v6.7.2
 	github.com/spf13/cobra v1.10.1
 )
 
