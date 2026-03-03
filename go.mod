@@ -5,7 +5,7 @@ go 1.25
 require (
 	github.com/aws/aws-sdk-go-v2 v1.41.2
 	github.com/aws/aws-sdk-go-v2/config v1.32.9
-	github.com/aws/aws-sdk-go-v2/service/controltower v1.28.5
+	github.com/aws/aws-sdk-go-v2/service/controltower v1.28.6
 	github.com/aws/aws-sdk-go-v2/service/organizations v1.50.3
 	github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.39.8
 	github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.1
