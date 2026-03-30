@@ -26,8 +26,8 @@ github.com/aws/aws-sdk-go-v2/service/signin v1.0.8 h1:0GFOLzEbOyZABS3PhYfBIx2rNB
 github.com/aws/aws-sdk-go-v2/service/signin v1.0.8/go.mod h1:LXypKvk85AROkKhOG6/YEcHFPoX+prKTowKnVdcaIxE=
 github.com/aws/aws-sdk-go-v2/service/sso v1.30.13 h1:kiIDLZ005EcKomYYITtfsjn7dtOwHDOFy7IbPXKek2o=
 github.com/aws/aws-sdk-go-v2/service/sso v1.30.13/go.mod h1:2h/xGEowcW/g38g06g3KpRWDlT+OTfxxI0o1KqayAB8=
-github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.4 h1:V8l2sQcsGOcy+E7ei6xpD/l/3SiP7akfbynQpMDL/dU=
-github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.4/go.mod h1:TM7b+jP+XG0nYPNlVY0YmsHbm7B4sEXPSQIkABM4L74=
+github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.5 h1:ejsttL9YFm0TW68Xp5PbVJcdZEfttiZZ6aUkUGAZH58=
+github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.5/go.mod h1:ncL0HzgvOD8ZFzNyoO0Fye/5xsIIc/pYK33g7d4CFzY=
 github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.17 h1:jzKAXIlhZhJbnYwHbvUQZEB8KfgAEuG0dc08Bkda7NU=
 github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.17/go.mod h1:Al9fFsXjv4KfbzQHGe6V4NZSZQXecFcvaIF4e70FoRA=
 github.com/aws/aws-sdk-go-v2/service/sts v1.41.9 h1:Cng+OOwCHmFljXIxpEVXAGMnBia8MSU6Ch5i9PgBkcU=
