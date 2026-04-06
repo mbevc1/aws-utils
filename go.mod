@@ -6,7 +6,7 @@ require (
 	github.com/aws/aws-sdk-go-v2 v1.41.5
 	github.com/aws/aws-sdk-go-v2/config v1.32.13
 	github.com/aws/aws-sdk-go-v2/service/controltower v1.28.9
-	github.com/aws/aws-sdk-go-v2/service/organizations v1.50.6
+	github.com/aws/aws-sdk-go-v2/service/organizations v1.51.1
 	github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.39.12
 	github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.5
 	github.com/fatih/color v1.19.0
