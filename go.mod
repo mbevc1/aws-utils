@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/controltower v1.28.10
 	github.com/aws/aws-sdk-go-v2/service/organizations v1.51.1
 	github.com/aws/aws-sdk-go-v2/service/servicecatalog v1.39.13
-	github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.6
+	github.com/aws/aws-sdk-go-v2/service/ssoadmin v1.37.7
 	github.com/fatih/color v1.19.0
 	github.com/jedib0t/go-pretty/v6 v6.7.9
 	github.com/spf13/cobra v1.10.2
